@@ -6,7 +6,7 @@ import opt_functions
 # ---- parameters ----
 n = 3
 a = [0, 1, 0.5, -2]
-m = 100
+m = 10000
 sigma = 0.5
 
 # ---- define x and f(x) ----
@@ -19,11 +19,7 @@ y = f_x + rand_gen.normal(0, sigma, [m])
 
 # Q3
 def estimation_solve(x, y):
-    x_mat = []
-    x_mat.append(np.ones([m]))
-    for i in range(1, 4):
-        x_mat.append(x**i)
-    X = np.stack(x_mat, axis=-1)
+    X = opt_functions.calc_x_matrix(x)
     return np.linalg.inv(X.transpose() @ X) @ X.transpose() @ y
 
 
