@@ -77,7 +77,7 @@ def PGD_poly(x, y, step_size='const', epsilon=0.001, T=1000, order=3, r=4):
 # plt.show()
 
 
-# Q7
+# Q8
 X = opt_functions.calc_x_matrix(x, n+1)
 L = opt_functions.max_eig(X.transpose() @ X / m)
 meo = opt_functions.min_eig(X.transpose() @ X / m)
